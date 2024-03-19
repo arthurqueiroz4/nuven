@@ -1,5 +1,6 @@
 package com.java.nuven.domain.service;
 
+import com.java.nuven.application.dto.Params;
 import com.java.nuven.application.dto.TodoDTO;
 import com.java.nuven.domain.entity.Todo;
 import com.java.nuven.domain.expection.DomainException;
@@ -19,8 +20,8 @@ public class TodoService {
         this.todoRepository = todoRepository;
     }
 
-    public Page<Todo> findAll() {
-        return todoRepository.findAll();
+    public Page<Todo> findAll(Params params) {
+        return todoRepository.findAll(params);
     }
 
     public TodoDTO getById(UUID id) {
