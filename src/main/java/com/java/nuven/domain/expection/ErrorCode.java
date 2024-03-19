@@ -1,0 +1,5 @@
+package com.java.nuven.domain.expection;
+
+public enum ErrorCode {
+    USER_NOT_FOUND, JWT_EXTRACT_ERROR, JWT_MISSING_ERROR, JWT_USER_NOT_FOUND_EXTRACT, INVALID_CREDENTIALS, TODO_NOT_FOUND
+}
