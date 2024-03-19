@@ -1,11 +1,11 @@
 package com.java.nuven.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.java.nuventest.application.dto.TodoDTO;
-import com.java.nuventest.domain.exception.DomainException;
-import com.java.nuventest.domain.exception.ErrorCode;
-import com.java.nuventest.domain.service.TodoService;
-import com.java.nuventest.infra.utils.JwtUtils;
+import com.java.nuven.application.dto.TodoDTO;
+import com.java.nuven.domain.exception.DomainException;
+import com.java.nuven.domain.exception.ErrorCode;
+import com.java.nuven.domain.service.TodoService;
+import com.java.nuven.infra.utils.JwtUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

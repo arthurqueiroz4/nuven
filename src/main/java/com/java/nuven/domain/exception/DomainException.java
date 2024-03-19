@@ -1,4 +1,4 @@
-package com.java.nuven.domain.expection;
+package com.java.nuven.domain.exception;
 
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
