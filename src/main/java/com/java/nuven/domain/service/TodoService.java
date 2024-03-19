@@ -53,6 +53,7 @@ public class TodoService {
         Todo todo = findById(id);
         BeanUtils.copyProperties(todoDTO, todo, "id");
         todoRepository.save(todo);
+        todoDTO.setId(todo.getId());
         return todoDTO;
     }
 }
