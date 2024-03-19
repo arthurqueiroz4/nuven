@@ -2,6 +2,7 @@ package com.java.nuven.infra.init;
 
 import com.java.nuven.domain.repository.TodoRepository;
 import com.java.nuven.domain.repository.UserRepository;
+import com.java.nuven.domain.service.AuthenticationService;
 import com.java.nuven.domain.service.TodoService;
 import com.java.nuven.domain.service.UserService;
 import org.springframework.context.annotation.Bean;
@@ -19,5 +20,10 @@ public class BeanConfig {
     @Bean
     UserService userService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         return new UserService(userRepository, passwordEncoder);
+    }
+
+    @Bean
+    public AuthenticationService authenticationService(UserService userService, PasswordEncoder passwordEncoder) {
+        return new AuthenticationService(userService, passwordEncoder);
     }
 }
