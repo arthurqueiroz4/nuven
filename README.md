@@ -1,6 +1,6 @@
 # Nuven - desafio técnico para desenvolvedor Java
 
-Este é um projeto CRUD que utiliza Spring Boot e Spring Data JPA para criar, ler, atualizar e deletar registros de um banco de dados. E para a segurança da aplicação, foi utilizado o Spring Security com usando tokens JWT.
+Este é um projeto CRUD que utiliza Spring Boot e Spring Data JPA para criar, ler, atualizar e deletar registros de um banco de dados. E para a segurança da aplicação, foi utilizado o Spring Security com tokens JWT.
 
 ## Tecnologias Utilizadas
 
