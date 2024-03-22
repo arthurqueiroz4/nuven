@@ -23,6 +23,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new DomainException(ErrorCode.USER_NOT_FOUND, HttpStatus.BAD_REQUEST));
-        return new UserDetailsImp(user);
+        return new UserDetailsImpl(user);
     }
 }

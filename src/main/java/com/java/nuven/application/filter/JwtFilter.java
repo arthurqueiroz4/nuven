@@ -2,7 +2,7 @@ package com.java.nuven.application.filter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.java.nuven.application.response.ProblemDetail;
-import com.java.nuven.application.security.details.UserDetailsImp;
+import com.java.nuven.application.security.details.UserDetailsImpl;
 import com.java.nuven.domain.entity.User;
 import com.java.nuven.domain.exception.ErrorCode;
 import com.java.nuven.domain.repository.UserRepository;
@@ -59,7 +59,7 @@ public class JwtFilter extends OncePerRequestFilter {
             makeError(response, ErrorCode.JWT_USER_NOT_FOUND_EXTRACT);
             return;
         }
-        UserDetailsImp userDetails = new UserDetailsImp(user);
+        UserDetailsImpl userDetails = new UserDetailsImpl(user);
 
         Authentication authentication =
                 new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());

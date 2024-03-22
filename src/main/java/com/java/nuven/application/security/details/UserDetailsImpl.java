@@ -10,11 +10,11 @@ import java.util.Collection;
 import java.util.Collections;
 
 @Getter
-public class UserDetailsImp implements UserDetails {
+public class UserDetailsImpl implements UserDetails {
 
     private final User user;
 
-    public UserDetailsImp(User user) {
+    public UserDetailsImpl(User user) {
         this.user = user;
     }
 
