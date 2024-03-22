@@ -27,10 +27,6 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public Optional<User> findById(UUID id) {
-        return userRepository.findById(id);
-    }
-
     public Page<User> findAll(Params params) {
         return userRepository.findAll(params);
     }
