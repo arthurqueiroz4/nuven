@@ -3,6 +3,7 @@ package com.java.nuven.infra.repository;
 import com.java.nuven.application.dto.Params;
 import com.java.nuven.domain.entity.Todo;
 import com.java.nuven.domain.repository.TodoRepository;
+import jakarta.persistence.criteria.Expression;
 import jakarta.persistence.criteria.Predicate;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -59,7 +60,10 @@ public class PostgresTodoRepository implements TodoRepository {
             Object date = filters.get("date");
             if (Objects.nonNull(date)) {
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-                predicates.add(criteriaBuilder.equal(root.get("createdAt"), LocalDate.parse(date.toString(), formatter).atStartOfDay()));
+                Expression<String> dayExpression = criteriaBuilder.function("TO_CHAR", String.class, root.get("dueDate"), criteriaBuilder.literal("DD"));
+                Expression<String> monthExpression = criteriaBuilder.function("TO_CHAR", String.class, root.get("dueDate"), criteriaBuilder.literal("MM"));
+                predicates.add(criteriaBuilder.equal(dayExpression, String.format("%02d", LocalDate.parse(date.toString(), formatter).getDayOfMonth())));
+                predicates.add(criteriaBuilder.equal(monthExpression, String.format("%02d", LocalDate.parse(date.toString(), formatter).getMonthValue())));
             }
 
             predicates.add(criteriaBuilder.isNull(root.get("deletedAt")));
