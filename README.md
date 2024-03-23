@@ -72,8 +72,52 @@ Este é um projeto CRUD que utiliza Spring Boot e Spring Data JPA para criar, le
 
 - Para rodar os testes, execute o comando com o container do banco de dados **rodando**:
     ```
-    ./mvnw test
+    docker compose up -d nuven-db && ./mvnw test
     ```
+## Rotas da API
+
+A seguir estão as rotas disponíveis na API:
+
+### 1. Todos
+
+- **Listar Todos**
+  - **Método:** GET
+  - **Endpoint:** `/api/todos`
+  - **Descrição:** Retorna uma lista de todos os itens a serem feitos.
+
+- **Criar Todo**
+  - **Método:** POST
+  - **Endpoint:** `/api/todos`
+  - **Descrição:** Cria um novo item a ser feito.
+
+- **Detalhes do Todo**
+  - **Método:** GET
+  - **Endpoint:** `/api/todos/{id}`
+  - **Descrição:** Retorna os detalhes de um item específico a ser feito com o ID correspondente.
+
+- **Atualizar Todo**
+  - **Método:** PUT
+  - **Endpoint:** `/api/todos/{id}`
+  - **Descrição:** Atualiza as informações de um item específico a ser feito com o ID correspondente.
+
+- **Excluir Todo**
+  - **Método:** DELETE
+  - **Endpoint:** `/api/todos/{id}`
+  - **Descrição:** Exclui um item específico a ser feito com o ID correspondente.
+
+### 2. Autenticação
+
+- **Login**
+  - **Método:** POST
+  - **Endpoint:** `/api/auth/auth`
+  - **Descrição:** Permite que um usuário faça login na aplicação para obter um token JWT válido.
+
+
+### 3. Documentação da API
+
+- **Swagger UI**
+  - **URL:** [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
+  - **Descrição:** Interface interativa para explorar e testar os endpoints da API.
 
 ## Contato
 
